@@ -1,4 +1,5 @@
 import s from "./ArticlesPage.module.scss";
-export const ArticlesPage = () => {
+const ArticlesPage = () => {
   return <div className={s.articlesPage}>ArticlesPage</div>;
 };
+export default ArticlesPage
