@@ -4,8 +4,13 @@
   cursor: pointer;
 }
 
+svg {
+  fill: var(--bg-color);
+}
+
 .clear {
   color: var(--inverted-bg-color);
+  ;
 }
 
 .clearInverted {

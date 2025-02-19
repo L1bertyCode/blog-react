@@ -5,7 +5,11 @@ export const AppRouter = () => {
   return (
     <Routes>
       {routeConfig.map((r) => (
-        <Route key={r.path} path={r.path} element={r.element} />
+        <Route
+          key={r.path}
+          path={r.path}
+          element={<div className={"page"}>{r.element}</div>}
+        />
       ))}
     </Routes>
   );

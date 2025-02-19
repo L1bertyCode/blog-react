@@ -2,6 +2,7 @@ import "./App.css";
 import { AppRouter } from "./providers/router";
 import { Suspense, useEffect, useState } from "react";
 import { Navbar } from "@/widgets/Navbar";
+import { Sidebar } from "@/widgets/Sidebar/ui/Sidebar";
 
 export type Theme = "light" | "dark";
 function App() {
@@ -9,7 +10,7 @@ function App() {
   useEffect(() => {
     document.body.className = `app_${theme}_theme`;
   }, [theme]);
-  const chnageTheme = (theme: Theme) => {
+  const changeTheme = (theme: Theme) => {
     let newTheme: Theme;
     switch (theme) {
       case "light":
@@ -26,9 +27,12 @@ function App() {
 
   return (
     <div className={`app app_${theme}_theme`}>
-      <Navbar chnageTheme={() => chnageTheme(theme)} />
       <Suspense fallback={<div>Loading...</div>}>
-        <AppRouter />
+        <Navbar />
+        <div className={"contentWrapper"}>
+          <Sidebar changeTheme={() => changeTheme(theme)} />
+          <AppRouter  />
+        </div>
       </Suspense>
     </div>
   );

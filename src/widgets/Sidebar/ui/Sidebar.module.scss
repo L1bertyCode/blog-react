@@ -1,0 +1,22 @@
+.sidebar {
+  background: var(--inverted-bg-color);
+  width: var(--sidebar-width);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: width linear var(--transition-delay);
+}
+
+.collapsed {
+  width: var(--sidebar-width-collapsed);
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.switchers {
+  padding-bottom: 20px;
+}

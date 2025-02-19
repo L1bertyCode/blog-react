@@ -22,7 +22,6 @@ export const MainLayout = ({
         <>{sidebar}</>
         <>{main}</>
       </div>
-      <>{footer}</>
     </div>
   );
 };
