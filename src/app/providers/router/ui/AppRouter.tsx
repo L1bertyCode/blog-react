@@ -9,12 +9,11 @@ export const AppRouter = () => {
         <Route
           key={r.path}
           path={r.path}
-          element={<div className={"page"}>{r.element}</div>}
+          element={<div>{r.element}</div>}
         />
       ))}
       <Route
         path="*"
-        className={"page"}
         element={<NotFoundPage />}
       />
     </Routes>

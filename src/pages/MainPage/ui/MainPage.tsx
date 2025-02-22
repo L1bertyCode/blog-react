@@ -1,9 +1,10 @@
+import { Page } from "@/shared/layouts/Page/Page";
 import s from "./MainPage.module.scss";
 const MainPage = () => {
   return (
-    <div className={s.mainPage}>
+    <Page className={s.mainPage}>
       <div>MainPage</div>
-    </div>
+    </Page>
   );
 };
 export default MainPage;

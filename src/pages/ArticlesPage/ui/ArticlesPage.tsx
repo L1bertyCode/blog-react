@@ -1,5 +1,6 @@
+import { Page } from "@/shared/layouts/Page/Page";
 import s from "./ArticlesPage.module.scss";
 const ArticlesPage = () => {
-  return <div className={s.articlesPage}>ArticlesPage</div>;
+  return <Page className={s.articlesPage}>ArticlesPage</Page>;
 };
 export default ArticlesPage
