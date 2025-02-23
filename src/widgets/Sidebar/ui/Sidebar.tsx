@@ -6,6 +6,7 @@ import { useState } from "react";
 import { AppButton } from "@/shared/ui/AppButton/AppButton";
 import { ThemeSwitcher } from "@/shared/ui/ThemeSwitcher/ThemeSwitcher";
 import { LanguageSwitcher } from "@/shared/ui/LanguageSwitcher/LanguageSwitcher";
+import { AppFlex } from "@/shared/ui/AppFlex/AppFlex";
 interface SidebarProps {
   changeTheme: () => void;
   className?: string;
@@ -13,12 +14,19 @@ interface SidebarProps {
 export const Sidebar = ({ changeTheme, className }: SidebarProps) => {
   const [collapsed, setCollapsed] = useState(true);
   return (
-    <div
+    <AppFlex
+      flexDirection="column"
+      justifyContent="space-between"
+      alignItems="center"
+      gap={20}
       className={classNames(s.sidebar, { [s.collapsed]: collapsed }, [
         className,
       ])}
     >
-      <nav>
+      <AppFlex
+        flexDirection="column"
+        BlockElement={"nav"}
+      >
         {routeConfig.map((r) => (
           <Link
             key={r.path}
@@ -27,17 +35,20 @@ export const Sidebar = ({ changeTheme, className }: SidebarProps) => {
             {r.name}
           </Link>
         ))}
-      </nav>
+      </AppFlex>
       <AppButton
         variant="clearInverted"
         onClick={() => setCollapsed((prev) => !prev)}
       >
         {collapsed ? ">" : "<"}
       </AppButton>
-      <div className={s.switchers}>
+      <AppFlex
+        flexDirection="column"
+        className={s.switchers}
+      >
         <ThemeSwitcher changeTheme={changeTheme} />
         <LanguageSwitcher />
-      </div>
-    </div>
+      </AppFlex>
+    </AppFlex>
   );
 };

@@ -9,7 +9,6 @@ interface NavbarProps {
 export const Navbar = ({ className }: NavbarProps) => {
   return (
     <div className={classNames(s.navbar, {}, [className])}>
-
       {routeConfig.map((r) => (
         <Link
           key={r.path}
